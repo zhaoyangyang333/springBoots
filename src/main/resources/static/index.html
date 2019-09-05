@@ -3,10 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <title>Title</title>
+        <link type="text/css" href="css/common.css" rel="stylesheet">
     </head>
     <body>
-        <form action="/user/addUser">
-            <input type="text" name="name" />
+        <form action="/user/addUser" method="post">
+            姓名：<input type="text" name="name" title="姓名"/><br/>
+            年纪：<input type="text" name="age" title="年龄"/><br/>
             <button type="submit">提交</button>
         </form>
     </body>
