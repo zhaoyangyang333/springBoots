@@ -4,12 +4,24 @@
         <meta charset="UTF-8">
         <title>Title</title>
         <link type="text/css" href="css/common.css" rel="stylesheet">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     </head>
     <body>
         <form action="/user/addUser" method="post">
-            姓名：<input type="text" name="name" title="姓名"/><br/>
-            年纪：<input type="text" name="age" title="年龄"/><br/>
-            <button type="submit">提交</button>
+            姓名：<input type="text" title="姓名" id="name"/><br/>
+            年纪：<input type="text" title="年龄" id="age"/><br/>
+            <a id="submit" href="javascript:void(0);">按钮</a>
         </form>
+        <script type="text/javascript">
+            $("#submit").click(function () {
+                var nval=$("#name").val();
+                var aval=$("#age").val();
+
+
+                $.post("/user/addUser",{name:nval,age:aval},function (data) {
+                    alert(data);
+                });
+            })
+        </script>
     </body>
 </html>
